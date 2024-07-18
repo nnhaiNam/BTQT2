@@ -29,6 +29,7 @@ namespace ClientSide
             {
                 int port = int.Parse(textBoxPort.Text);
                 client.Connect(textBoxIP.Text, port);
+                mainStream = client.GetStream();
                 MessageBox.Show("Kết nối thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConnect.Enabled = false;
                 buttonConnect.Text = "Connected";
@@ -284,6 +285,8 @@ namespace ClientSide
                 {
                     listBox1.Items.Add($"Error receiving image take screen: {ex.Message}");
                 }));
+
+                
             }
             
 
